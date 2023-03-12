@@ -3,3 +3,19 @@
     max-height: 110px;
     margin: 10px 40px;
   }
+
+#btn-aqua{
+  background-color: rgb(60, 243, 243) !important;
+  
+}
+#clear{
+  max-width: 800px;
+margin: 0 auto;
+}
+
+@media only screen and (max-width: 992px){
+  #clear{
+    margin: 0 20px;
+    max-width: 120px;
+  }
+}

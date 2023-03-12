@@ -1,8 +1,14 @@
 import PropTypes from "prop-types";
-import './Navbar.css'
+import "./Navbar.css";
+import { useState } from "react";
 const Navbar = (props) => {
+
+
   return (
-    <nav className="navbar navbar-expand-lg nav mb-2">
+    <nav
+      className={`navbar navbar-expand-lg nav mb-2 bg-${props.mode}`}
+      data-bs-theme={props.mode}
+    >
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           {props.name}
@@ -37,6 +43,24 @@ const Navbar = (props) => {
             </li>
           </ul>
         </div>
+        <div className="form-check form-switch">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault"
+            onClick={() => {
+              props.toggleMode();
+              props.textColorHandle();
+            }}
+          />
+          <label
+            className={`form-check-label text-${props.textColor}`}
+            htmlFor="flexSwitchCheckDefault"
+          >
+            Dark Mode
+          </label>
+        </div>
       </div>
     </nav>
   );
@@ -49,5 +73,5 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-    name: "Nav"
-}
+  name: "Nav",
+};
